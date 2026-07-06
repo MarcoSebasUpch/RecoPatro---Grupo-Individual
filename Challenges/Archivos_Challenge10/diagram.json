@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-pi-pico", "id": "pico", "top": -41.55, "left": -15.6, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -145.3, "left": -125, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot2", "top": -145.3, "left": -29, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot3", "top": -145.3, "left": 76.6, "attrs": {} }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "pot1:GND", "pico:GND.1", "black", [ "v0" ] ],
+    [ "pot2:GND", "pico:GND.1", "black", [ "v0" ] ],
+    [ "pot3:GND", "pico:GND.1", "black", [ "v0" ] ],
+    [ "pot1:VCC", "pico:3V3", "red", [ "v0" ] ],
+    [ "pot3:VCC", "pico:3V3", "red", [ "v0" ] ],
+    [ "pot2:VCC", "pico:3V3", "red", [ "v0" ] ],
+    [ "pot3:SIG", "pico:GP26", "green", [ "v0" ] ],
+    [ "pico:GP27", "pot2:SIG", "green", [ "h0" ] ],
+    [ "pot1:SIG", "pico:GP28", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
